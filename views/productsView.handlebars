@@ -1,0 +1,23 @@
+<h2>Products</h2>
+<div class="products-container">
+    {{#each products}}
+    <div class="product">
+        <img src="{{this.image}}" alt="{{this.name}}" class="product-image">
+        <h3>{{this.name}}</h3>
+        <p>{{this.description}}</p>
+        <p>Price: ${{this.price}}</p>
+        <p>Stock Quantity: {{this.stockQuantity}}</p>
+        <form action="/add-to-order" method="POST">
+            <input type="hidden" name="productId" value="{{this.id}}">
+            <label for="quantity{{this.id}}">Quantity:</label>
+            <input type="number" id="quantity{{this.id}}" 
+                        name="quantity" value="0" min="0" 
+                        max="{{this.stockQuantity}}">
+            <input type="submit" value="Add to Order">
+        </form>
+    </div>
+    {{/each}}
+</div>
+<form action="/order-summary" method="POST">
+    <input type="submit" value="Review Order" class="order-submit">
+</form>

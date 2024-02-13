@@ -1,0 +1,27 @@
+<body>
+    <h1>Finalize Your Order</h1>
+    <div id="orderSummary">
+        {{#each items}}
+            {{#if quantity}}
+                <div class="item">
+                    <img src="{{this.image}}" alt="{{this.name}}" class="product-image">
+                    <div class="item-info">
+                        <h2>{{this.name}}</h2>
+                        <p>Quantity: {{this.quantity}}</p>
+                        <p>Price: ${{this.price}}</p>
+                        <p>Total Price: ${{multiply this.quantity this.price}}</p>
+                    </div>
+                </div>
+            {{/if}}
+        {{/each}}
+        <div class="total-price">
+            <h3>Total Order Price: ${{totalOrderPrice items}}</h3>
+        </div>
+    </div>
+    <form action="./products">
+        <button type="submit">Continue Shopping</button>
+    </form>
+    <form action="./reviewOrders">
+        <button type="submit">Review Orders</button>
+    </form>
+</body>

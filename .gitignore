@@ -1,0 +1,38 @@
+# Dependency directories
+node_modules/
+
+# Environment variables
+.env
+
+# Build files
+/build
+
+# Logs
+logs
+*.log*
+
+# Editor specific files
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+.DS_Store*
+Thumbs.db
+
+# IDE specific files
+.idea/
+
+# Project-specific sensitive files
+config.js
+credentials.development.json
+credentials.js
+
+# Optional: Ignore lock files if you're not sharing them
+package-lock.json
+yarn.lock
