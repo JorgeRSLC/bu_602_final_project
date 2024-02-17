@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details</title>
+
+</head>
+<body>
+    <h1>Order Details</h1>
+    {{#each orderDetails}}
+        <div class="order-block">
+            <h2>Order ID: {{this.orderID}}</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each this.products}}
+                        <tr>
+                            <td>{{this.name}}</td>
+                            <td>{{this.quantity}}</td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    {{/each}}
+</body>
+</html>

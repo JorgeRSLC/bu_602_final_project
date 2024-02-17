@@ -28,8 +28,6 @@ let bikeSchema = new Schema({
 	collection: 'bike_collection' // Specifying the collection name for the schema
 });
 
-;
-
 // Define the item schema
 const itemSchema = new Schema({
     productID: {
@@ -40,6 +38,8 @@ const itemSchema = new Schema({
         type: Number,
         required: true
     }
+}, {
+	collection: 'order_collection'
 });
 
 // Define the main schema
@@ -49,13 +49,12 @@ const orderSchema = new Schema({
 
 // Exporting a function to retrieve the Mongoose model
 module.exports = {
-	getBikeModel: () => {
+	getBikeModel: () => {		
 		// If connection is not established, create a new connection and model
 		if (connection == null) {
 			console.log("Creating connection and model...");
 			// Creating a new connection to MongoDB using the connection URL
-			connection = mongoose.createConnection(dbUrl, 
-                { });
+			connection = mongoose.createConnection(dbUrl);
 			// Creating a Mongoose model based on the employee schema
 			model = connection.model("BikeModel", bikeSchema);
 		};
@@ -63,15 +62,15 @@ module.exports = {
 		return model;
 	},
 
-	getOrderModel: ()=>{
+	getOrderModel: () => {
+		console.log('model export hit');
 		// If connection is not established, create a new connection and model
 		if (connection == null) {
 			console.log("Creating connection and model...");
 			// Creating a new connection to MongoDB using the connection URL
-			connection = mongoose.createConnection(dbUrl, 
-                { });
+			connection = mongoose.createConnection(dbUrl);
 			// Creating a Mongoose model based on the employee schema
-			model = connection.model("OrdereModel", orderSchema);
+			model = connection.model("OrderModel", orderSchema);
 		};
 		// Return the Mongoose model
 		return model;

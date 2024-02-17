@@ -9,6 +9,9 @@ const app = express();
 app.engine('handlebars', expressHandlebars({ defaultLayout: 'main' }));
 app.set('view engine','handlebars')
 
+// Importing the database connection module
+require('./db')
+
 //static resources
 app.use(express.static(__dirname+'/public'))
 

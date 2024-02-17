@@ -1,5 +1,4 @@
-const ShopDB = require('../shopDB.js')
-const Bike = ShopDB.getBikeModel();
+const Bike = require('../models/bikes');
 
 module.exports = async (req, res, next) => {
     // declare cart values

@@ -1,8 +1,7 @@
-const ShopDB = require('../shopDB.js')
-const Bike = ShopDB.getBikeModel();
+const Bike = require('../models/bikes');
 
 module.exports = async (req, res, next) => {
-    
+   
     let bikes = await Bike.find({})
 
     let results = bikes.map(bike =>{
