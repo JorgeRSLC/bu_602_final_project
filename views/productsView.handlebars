@@ -4,7 +4,7 @@
 </div>
 <div class="products-container">
     {{#each products}}
-    <div class="product">
+    <div class="product {{#if (eq this.stockQuantity 0)}}out-of-stock{{/if}}">
         <img src="{{this.image}}" alt="{{this.name}}" class="product-image">
         <h3>{{this.name}}</h3>
         <p>{{this.description}}</p>
@@ -16,7 +16,7 @@
             <input type="number" id="quantity{{this.id}}" 
                         name="quantity" value="0" min="0" 
                         max="{{this.stockQuantity}}">
-            <input type="submit" value="Add to Order">
+            <input type="submit" value="Add to Order" {{#if (eq this.stockQuantity 0)}}disabled{{/if}}>
         </form>
     </div>
     {{/each}}

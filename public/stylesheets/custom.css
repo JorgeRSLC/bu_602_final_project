@@ -86,6 +86,12 @@ a:hover {
     margin-top: 10px;
 }
 
+.out-of-stock {
+    background-color: #f0f0f0; /* Make the product div slightly greyer */
+    pointer-events: none; /* Disable all interactions including the button */
+    opacity: 0.6; /* Optionally, make the product div slightly transparent */
+}
+
 /* Order form styles */
 #orderForm {
     margin: 0 auto;

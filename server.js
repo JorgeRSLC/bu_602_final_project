@@ -6,7 +6,14 @@ const { engine: expressHandlebars } = require('express-handlebars');
 const app = express();
 
 // setup handlebars view engine
-app.engine('handlebars', expressHandlebars({ defaultLayout: 'main' }));
+app.engine('handlebars', expressHandlebars({ 
+    defaultLayout: 'main',
+    helpers: {
+        eq: function(a, b) {
+            return a === b;
+        }
+    }
+ }));
 app.set('view engine','handlebars')
 
 // Importing the database connection module
