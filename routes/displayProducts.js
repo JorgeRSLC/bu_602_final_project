@@ -14,6 +14,10 @@ module.exports = async (req, res, next) => {
             image: bike.image
         }
     })
-
-    res.render('productsView', { products: results });
+    const cart = req.session.cart || [];
+    let cartCount = 0;
+    cart.forEach(item => {
+        cartCount += item.quantity;
+    });
+    res.render('productsView', { products: results, count: cartCount});
 };
