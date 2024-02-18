@@ -169,3 +169,32 @@ button[type="submit"]:hover,
     font-size: 16px;
     margin: 4px 2px;
 }
+.ordersView-table {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-collapse: collapse;
+}
+
+.ordersView-table th, .ordersView-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.ordersView-table th {
+    background-color: #0073e6;
+    color: white;
+}
+
+.ordersView-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.ordersView-table tr:hover {
+    background-color: #ddd;
+}
