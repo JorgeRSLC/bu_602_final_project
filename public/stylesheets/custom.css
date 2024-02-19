@@ -286,3 +286,36 @@ button[type="submit"]:hover,
     font-size: 2em;
     font-weight: bold;
 }
+
+.new-bike-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.new-bike-form label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.new-bike-form input[type="text"],
+.new-bike-form input[type="number"],
+.new-bike-form textarea {
+    width: 100%;
+    margin: 5px 0;
+}
+
+.new-bike-form input[type="submit"] {
+    width: auto;
+    margin-top: 10px;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.new-bike-form input[type="submit"]:hover {
+    background-color: #005aad;
+}
