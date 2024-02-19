@@ -4,7 +4,7 @@
     <div class="product-inventory {{#if (eq this.stockQuantity 0)}}out-of-stock-inventory{{/if}}">
         <form action="/update-product" method="POST">
             <input type="hidden" name="productId" value="{{this.id}}">
-            <div class="product-image-container {{#if (eq this.stockQuantity 0)}}out-of-stock{{/if}}">
+            <div class="product-image-container {{#if (eq this.stockQuantity 0)}}out-of-stock-products{{/if}}">
                 <img src="{{this.image}}" alt="{{this.name}}" class="product-image">
             </div>
             <label for="name{{this.id}}">Name:</label>

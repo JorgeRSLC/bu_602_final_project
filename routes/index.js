@@ -6,6 +6,7 @@ const addToOrder = require('./addToOrder');
 const orderSummary = require('./orderSummary')
 const submitOrder = require('./submitOrder')
 const inventory = require('./inventory')
+const updateBike = require('./updateBike')
 
 
 require('../db')
@@ -45,5 +46,7 @@ router.post('/submit-order',submitOrder)
 router.get('/orders-view', require('./displayOrders'))
 
 router.get('/inventory', inventory)
+
+router.post('/update-product', updateBike)
 
 module.exports = router;

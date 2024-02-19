@@ -271,7 +271,7 @@ button[type="submit"]:hover,
     position: relative; /* Make the image container a positioning context for absolute positioning */
 }
 
-.out-of-stock::before, .out-of-stock-products::before{
+.out-of-stock-products::before{
     content: "Out of Stock";
     position: absolute;
     top: 0;
