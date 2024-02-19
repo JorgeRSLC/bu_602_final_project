@@ -201,3 +201,88 @@ button[type="submit"]:hover,
 .ordersView-table tr:hover {
     background-color: #ddd;
 }
+.product-inventory {
+    width: 300px; /* Adjust width as needed */
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-inventory h3 {
+    margin-top: 0;
+}
+
+.product-inventory img {
+    width: 100%; /* Ensure images take up full width */
+    height: auto; /* Allow images to adjust height while maintaining aspect ratio */
+    max-height: 200px; /* Limit maximum height to avoid excessive stretching */
+    border-radius: 5px 5px 0 0; /* Rounded corners for top edges */
+}
+
+.product-inventory form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.product-inventory form label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-inventory form input[type="text"],
+.product-inventory form input[type="number"],
+.product-inventory form textarea {
+    width: 100%;
+    margin: 5px 0;
+}
+
+.product-inventory form input[type="submit"] {
+    width: auto;
+    margin-top: 10px;
+}
+
+.product-inventory form input[type="submit"]:hover {
+    background-color: #005aad;
+}
+
+.product-inventory form + form {
+    margin-top: 10px;
+}
+
+.product-inventory form + form input[type="submit"] {
+    background-color: #ff0000;
+    color: white;
+}
+
+.product-inventory form + form input[type="submit"]:hover {
+    background-color: #cc0000;
+}
+
+.out-of-stock-inventory {
+    background-color: #f0f0f0; /* Make the product div slightly greyer */
+    opacity: 0.6; /* Optionally, make the product div slightly transparent */
+}
+.product-image-container {
+    position: relative; /* Make the image container a positioning context for absolute positioning */
+}
+
+.out-of-stock::before, .out-of-stock-products::before{
+    content: "Out of Stock";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
+}

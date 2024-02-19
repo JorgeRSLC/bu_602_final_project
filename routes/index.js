@@ -5,6 +5,7 @@ const displayProducts = require('./displayProducts');
 const addToOrder = require('./addToOrder');
 const orderSummary = require('./orderSummary')
 const submitOrder = require('./submitOrder')
+const inventory = require('./inventory')
 
 
 require('../db')
@@ -42,5 +43,7 @@ router.post('/submit-order',submitOrder)
 
 //Route to handle displaying orders
 router.get('/orders-view', require('./displayOrders'))
+
+router.get('/inventory', inventory)
 
 module.exports = router;

@@ -1,0 +1,31 @@
+<h2>Update Inventory</h2>
+<div class="products-container">
+    {{#each products}}
+    <div class="product-inventory {{#if (eq this.stockQuantity 0)}}out-of-stock-inventory{{/if}}">
+        <form action="/update-product" method="POST">
+            <input type="hidden" name="productId" value="{{this.id}}">
+            <div class="product-image-container {{#if (eq this.stockQuantity 0)}}out-of-stock{{/if}}">
+                <img src="{{this.image}}" alt="{{this.name}}" class="product-image">
+            </div>
+            <label for="name{{this.id}}">Name:</label>
+            <input type="text" id="name{{this.id}}" name="name" value="{{this.name}}">
+            <label for="description{{this.id}}">Description:</label>
+            <textarea id="description{{this.id}}" name="description">{{this.description}}</textarea>
+            <label for="price{{this.id}}">Price:</label>
+            <input type="number" id="price{{this.id}}" name="price" value="{{this.price}}">
+            <label for="stockQuantity{{this.id}}">Stock Quantity:</label>
+            <input type="number" id="stockQuantity{{this.id}}" name="stockQuantity" value="{{this.stockQuantity}}">
+            <label for="image{{this.id}}">Image URL:</label>
+            <input type="text" id="image{{this.id}}" name="image" value="{{this.image}}">
+            <input type="submit" value="Update Product">
+        </form>
+        <form action="/delete-product" method="POST">
+            <input type="hidden" name="productId" value="{{this.id}}">
+            <input type="submit" value="Delete Product">
+        </form>
+    </div>
+    {{/each}}
+</div>
+<form action="/add_bike" method="GET">
+    <input type="submit" value="Add a new bike" class="order-submit">
+</form>

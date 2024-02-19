@@ -5,7 +5,9 @@
 <div class="products-container">
     {{#each products}}
     <div class="product {{#if (eq this.stockQuantity 0)}}out-of-stock{{/if}}">
-        <img src="{{this.image}}" alt="{{this.name}}" class="product-image">
+        <div class="product-image-container {{#if (eq this.stockQuantity 0)}}out-of-stock-prodcuts{{/if}}">
+            <img src="{{this.image}}" alt="{{this.name}}" class="product-image">
+        </div>
         <h3>{{this.name}}</h3>
         <p>{{this.description}}</p>
         <p>Price: ${{this.price}}</p>
