@@ -7,7 +7,6 @@ const orderSummary = require('./orderSummary')
 const submitOrder = require('./submitOrder')
 const inventory = require('./inventory')
 const updateBike = require('./updateBike')
-const addBikeForm = require('./addBikeForm')
 const addBike = require('./addBike')
 
 
@@ -30,8 +29,18 @@ router.use(expressSession({
 }))
 
 router.get('/', function(req, res, next) {
-    res.redirect('/products');
+    res.redirect('/login');
 });
+
+router.get('/login', (req, res) => {
+    res.render('loginView');
+});
+
+router.get('/register', (req, res) => {
+    res.render('registerView');
+});
+
+router.post('/login', require('./login'));
 
 router.get('/products', displayProducts);
 

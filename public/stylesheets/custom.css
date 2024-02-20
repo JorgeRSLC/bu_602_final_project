@@ -319,3 +319,98 @@ button[type="submit"]:hover,
 .new-bike-form input[type="submit"]:hover {
     background-color: #005aad;
 }
+
+/* Login form styles */
+.login {
+    margin: 0 auto;
+    max-width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.login h2, .login h3 {
+    color: #0073e6;
+}
+
+.login label {
+    display: block;
+    margin-top: 20px;
+}
+
+.login input[type="text"], .login input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.login input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login input[type="submit"]:hover {
+    background-color: #005aad;
+}
+
+button {
+    display: block;
+    width: 300px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005aad;
+}
+
+.register {
+    margin: 0 auto;
+    max-width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.register label {
+    display: block;
+    margin-top: 20px;
+}
+
+.register input[type="text"], .register input[type="password"], 
+.register input[type="email"], .register input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.register input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register input[type="submit"]:hover {
+    background-color: #005aad;
+}
