@@ -23,7 +23,7 @@ const orderSchema = new mongoose.Schema({
     // customer reference
     customer: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'customer_collection'    
+        ref: 'user_collection'    
     }
     }, {
 	    collection: 'order_collection'

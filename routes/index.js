@@ -27,7 +27,7 @@ router.use(expressSession({
     saveUninitialized: false,
     secret: credentials.cookieSecret,
 }))
-
+// main login route
 router.get('/', function(req, res, next) {
     res.redirect('/login');
 });
@@ -36,12 +36,16 @@ router.get('/login', (req, res) => {
     res.render('loginView');
 });
 
+router.post('/login', require('./login'));
+
+// register route
 router.get('/register', (req, res) => {
     res.render('registerView');
 });
 
-router.post('/login', require('./login'));
+router.post('/register', require('./register'));
 
+// product display route
 router.get('/products', displayProducts);
 
 // Route to handle adding items to the order
@@ -56,6 +60,7 @@ router.post('/submit-order',submitOrder)
 //Route to handle displaying orders
 router.get('/orders-view', require('./displayOrders'))
 
+// admin routes
 router.get('/inventory', inventory)
 
 router.post('/update-product', updateBike)
@@ -65,5 +70,15 @@ router.get('/add-bike', (req, res) => {
 });
 
 router.post('/add-bike', addBike)
+
+// 404 and 500 error handling
+router.use((req, res) => {
+    res.render('404');
+});
+
+router.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.render('500');
+});
 
 module.exports = router;

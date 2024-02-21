@@ -7,6 +7,9 @@ module.exports = async (req, res) => {
 
     try {
         const user = await User.findOne({ username: username });
+        if(user.role === 'admin') {
+            // redirect to admin page
+        }
         if (!user) {
             res.render('loginView',
             {
@@ -22,8 +25,13 @@ module.exports = async (req, res) => {
                 });
                 return;
             }
-            req.session.user = user._id; // Save user ID in session
-            res.redirect('/products');
+            else {
+                if(!req.session.user) {
+                    req.session.user = {};
+                }
+                req.session.user = user._id; 
+                res.redirect('/products');
+            }
         }
     } catch (err) {
         console.error(err);

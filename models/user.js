@@ -11,21 +11,6 @@ let userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    address:{
-        street: { type: String, required: true },
-        city: { type: String, required: true },
-        state: { type: String, required: true }, 
-        zip: { type: Number, required: true }
-    },
-    email: {
-        type: String,
-        required: true  
-
-    },
-    phone: {
-        type: String,
-        required: true
-    },
     username: {
         type: String,
         required: true
@@ -42,6 +27,6 @@ let userSchema = new mongoose.Schema({
         collection: 'user_collection' 
     });
 
-const Customer= mongoose.model('user_collection',userSchema)
+const User = mongoose.model('user_collection',userSchema)
 
-module.exports = Customer
+module.exports = User
