@@ -7,16 +7,17 @@ module.exports = async (req, res) => {
 
     try {
         const user = await User.findOne({ username: username });
-        if(user.role === 'admin') {
-            // redirect to admin page
-        }
+ 
         if (!user) {
             res.render('loginView',
             {
                 message1: 'User not found.',
                 message2: 'Please try again, or register as new customer'
             });
-        } else {
+        } else if(user.role === 'admin') {
+            // redirect to admin page
+        }
+        else {
             if (password !== user.password) {
                 res.render('loginView',
                 {

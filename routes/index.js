@@ -78,7 +78,7 @@ router.use((req, res) => {
 
 router.use((err, req, res, next) => {
     console.error(err.stack);
-    res.render('500');
+    res.render('500', {error: err});
 });
 
 module.exports = router;
