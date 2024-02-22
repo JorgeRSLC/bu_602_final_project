@@ -1,24 +1,26 @@
 <body>
     <h1>Finalize Your Order</h1>
-<form id="orderForm" action="/submit-order" method="POST">
-    {{#each items}}
-        {{#if quantity}}
-            <div class="item">
-                <input type="hidden" name="items[{{@index}}][productId]" 
-                    value="{{this.id}}">
-                <img src="{{this.image}}" alt="{{this.name}}" 
-                    class="product-image">
-                <h2>{{name}}</h2>
-                <p>{{description}}</p>
-                <p>Price: ${{price}}</p>
-                <label for="quantity{{@index}}">Finalize Quantity:</label>
-                <input type="number" id="quantity{{@index}}" 
-                    name="items[{{@index}}][quantity]" 
-                    value="{{quantity}}" min="0" data-index="{{@index}}">
-            </div>
-        {{/if}}
-    {{/each}}
-    <!-- Button to submit the form -->
-    <button type="submit">Submit Order</button> 
-</form>
+    <form id="orderForm" action="/submit-order" method="POST">
+        {{#each items}}
+            {{#if quantity}}
+                <div class="item">
+                    <input type="hidden" name="items[{{@index}}][productId]" 
+                        value="{{this.id}}">
+                    <input type="hidden" name="items[{{@index}}][price]" 
+                        value="{{this.price}}">
+                    <img src="{{this.image}}" alt="{{this.name}}" 
+                        class="product-image">
+                    <h2>{{name}}</h2>
+                    <p>{{description}}</p>
+                    <p>Price: ${{price}}</p>
+                    <label for="quantity{{@index}}">Finalize Quantity:</label>
+                    <input type="number" id="quantity{{@index}}" 
+                        name="items[{{@index}}][quantity]" 
+                        value="{{quantity}}" min="0" data-index="{{@index}}">
+                </div>
+            {{/if}}
+        {{/each}}
+        <!-- Button to submit the form -->
+        <button type="submit">Submit Order</button> 
+    </form>
 </body>

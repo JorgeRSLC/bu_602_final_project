@@ -10,7 +10,10 @@ module.exports = async (req, res, next) =>{
         const id = item.productId;
         // Get quantity from request body
         const quantity = item.quantity; 
-
+        // Get price from request body
+        const price = item.price;
+        console.log('id:', id, 'quantity:', quantity, 'price:', price)
+        
         // Fetch the current stockQuantity for the item from the Bikes model
         const bike = await Bikes.findOne({ _id: id });
         if (!bike) {
@@ -32,11 +35,13 @@ module.exports = async (req, res, next) =>{
         await bike.save();
 
         // Add id and adjusted quantity to the items array
-        items.push({ 'productID':id, 'quantity':adjustedQuantity });
+        items.push({ 'productID':id, 'quantity':adjustedQuantity, 
+            'price':price});
     }
 
     let order = new Order({
-        items:items
+        items:items,
+        customer: req.session.user
     })
 
     // Save the order to the database
@@ -48,6 +53,6 @@ module.exports = async (req, res, next) =>{
         res.redirect('/orders-view');
     } catch(err) {
         console.error("Error saving order:", err);
-        res.status(500).send("Error saving order");
+        res.render('500',{error:"Error saving order"});
     }
 }
