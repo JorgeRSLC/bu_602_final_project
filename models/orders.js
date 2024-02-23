@@ -24,6 +24,11 @@ const orderSchema = new mongoose.Schema({
     customer: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'user_collection'    
+    },
+    // Add a createdAt field
+    createdAt: {
+        type: Date,
+        default: Date.now
     }
     }, {
 	    collection: 'order_collection'

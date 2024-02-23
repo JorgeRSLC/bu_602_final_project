@@ -12,7 +12,6 @@ module.exports = async (req, res, next) =>{
         const quantity = item.quantity; 
         // Get price from request body
         const price = item.price;
-        console.log('id:', id, 'quantity:', quantity, 'price:', price)
         
         // Fetch the current stockQuantity for the item from the Bikes model
         const bike = await Bikes.findOne({ _id: id });

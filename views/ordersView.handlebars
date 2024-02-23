@@ -10,19 +10,22 @@
     <h1>Your Orders</h1>
     {{#each orderDetails}}
         <div class="order-block">
-            <h2>Order ID: {{this.orderID}}</h2>
+            <h2>Order Date: {{this.date}}</h3>
+            <h3>Order ID: {{this.orderID}}</h2>
             <table class="ordersView-table">
                 <thead>
                     <tr>
                         <th>Product Name</th>
                         <th>Quantity</th>
+                        <th>Price</th>
                     </tr>
                 </thead>
                 <tbody>
                     {{#each this.products}}
-                        <tr>
+                        <tr>    
                             <td>{{this.name}}</td>
                             <td>{{this.quantity}}</td>
+                            <td>{{this.price}}</td>
                         </tr>
                     {{/each}}
                 </tbody>

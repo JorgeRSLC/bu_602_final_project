@@ -1,10 +1,30 @@
 const Orders = require('../models/orders');
 const Bikes = require('../models/bikes');
 
+let formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
+
+let dateFormatter = (orderDate) => {
+    // Create a new Date object from orderDate
+    let date = new Date(orderDate);
+
+    // Extract the day, month, and year
+    let day = String(date.getDate()).padStart(2, '0');
+    let month = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-based in JavaScript
+    let year = date.getFullYear();
+
+    // Combine the day, month, and year into the desired format
+    let formattedDate = `${day}-${month}-${year}`;
+
+    return formattedDate;
+}
+
 module.exports = async function (req, res, next) {
     try {
         // Retrieve all orders
-        const allOrders = await Orders.find({});
+        const allOrders = await Orders.find({customer: req.session.user});
 
         // Array to store the result
         const orderDetails = [];
@@ -13,7 +33,8 @@ module.exports = async function (req, res, next) {
         for (const order of allOrders) {
             // Extract orderID
             const orderID = order._id;
-
+            // Extract order creation date
+            const orderDate = order.createdAt;
             // Array to store product names and quantities
             const products = [];
 
@@ -26,7 +47,8 @@ module.exports = async function (req, res, next) {
                 if (bike) {
                     products.push({
                         name: bike.name,
-                        quantity: item.quantity
+                        quantity: item.quantity,
+                        price: formatter.format(item.price)
                     });
                 }
             }
@@ -34,7 +56,8 @@ module.exports = async function (req, res, next) {
             // Add orderID and products to the orderDetails array
             orderDetails.push({
                 orderID: orderID,
-                products: products
+                products: products,
+                date: dateFormatter(orderDate)
             });
         }
 
