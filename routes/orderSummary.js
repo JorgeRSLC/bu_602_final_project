@@ -27,6 +27,10 @@ module.exports = async (req, res, next) => {
         }
     })
 
+    results.forEach(bike =>{
+        bike.image = '/' + bike.image.slice(2)
+    })
+
     updateQuantities(results,cartValues)
     
     res.render('orderSummaryView', { items: results });

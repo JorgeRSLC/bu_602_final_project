@@ -9,5 +9,5 @@ module.exports = async (req, res, next) => {
         image: req.body.image
     });
     await bike.save();
-    res.redirect('/inventory');
+    res.redirect('/admin/inventory');
 }

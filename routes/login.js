@@ -31,11 +31,16 @@ module.exports = async (req, res) => {
                     req.session.user = {};
                 }
                 req.session.user = user._id; 
-                res.redirect('/products');
+                    // Check the user's role and redirect them to the appropriate route
+                if (user.role === 'admin') {
+                    res.redirect('/admin');
+                } else {                    
+                    res.redirect('/customer');
+                }
             }
         }
     } catch (err) {
         console.error(err);
-        res.status(500).send('Internal server error');
+        res.render('500','Internal server error encountered at login.');
     }
 };

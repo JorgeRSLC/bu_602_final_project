@@ -12,8 +12,9 @@
         <p>{{this.description}}</p>
         <p>Price: ${{this.price}}</p>
         <p>Stock Quantity: {{this.stockQuantity}}</p>
-        <form action="/add-to-order" method="POST">
+        <form action="/customer/add-to-order" method="POST">
             <input type="hidden" name="productId" value="{{this.id}}">
+            <input type="hidden" name="price" value="{{this.price}}">
             <label for="quantity{{this.id}}">Quantity:</label>
             <input type="number" id="quantity{{this.id}}" 
                         name="quantity" value="0" min="0" 
@@ -23,6 +24,6 @@
     </div>
     {{/each}}
 </div>
-<form action="/order-summary" method="POST">
+<form action="/customer/order-summary" method="POST">
     <input type="submit" value="Review Order" class="order-submit">
 </form>

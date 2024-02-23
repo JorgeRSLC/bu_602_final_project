@@ -11,5 +11,6 @@ module.exports = (req, res) => {
         'price': price
     }
     req.session.cart.push(item);
-    res.redirect('/products');
+
+    res.redirect('/customer/products');
 }

@@ -1,13 +1,15 @@
 const express = require('express');
-
+const customerRouter = require('./customerRoutes');
+const adminRouter = require('./adminRoutes');
 // supporting modules
-const displayProducts = require('./displayProducts');
-const addToOrder = require('./addToOrder');
-const orderSummary = require('./orderSummary')
-const submitOrder = require('./submitOrder')
-const inventory = require('./inventory')
-const updateBike = require('./updateBike')
-const addBike = require('./addBike')
+
+// const displayProducts = require('./displayProducts');
+// const addToOrder = require('./addToOrder');
+// const orderSummary = require('./orderSummary')
+// const submitOrder = require('./submitOrder')
+// const inventory = require('./inventory')
+// const updateBike = require('./updateBike')
+// const addBike = require('./addBike')
 
 
 require('../db')
@@ -45,31 +47,35 @@ router.get('/register', (req, res) => {
 
 router.post('/register', require('./register'));
 
-// product display route
-router.get('/products', displayProducts);
+router.use('/customer', customerRouter);
+router.use('/admin', adminRouter);
 
-// Route to handle adding items to the order
-router.post('/add-to-order', addToOrder);
 
-// Route to handle reviewing ordered items
-router.post('/order-summary', orderSummary)
+// // product display route
+// router.get('/products', displayProducts);
 
-// Route to handle submitting orders
-router.post('/submit-order',submitOrder)
+// // Route to handle adding items to the order
+// router.post('/add-to-order', addToOrder);
 
-//Route to handle displaying orders
-router.get('/orders-view', require('./displayOrders'))
+// // Route to handle reviewing ordered items
+// router.post('/order-summary', orderSummary)
 
-// admin routes
-router.get('/inventory', inventory)
+// // Route to handle submitting orders
+// router.post('/submit-order',submitOrder)
 
-router.post('/update-product', updateBike)
+// //Route to handle displaying orders
+// router.get('/orders-view', require('./displayOrders'))
 
-router.get('/add-bike', (req, res) => {
-    res.render('addBikeView')
-});
+// // admin routes
+// router.get('/inventory', inventory)
 
-router.post('/add-bike', addBike)
+// router.post('/update-product', updateBike)
+
+// router.get('/add-bike', (req, res) => {
+//     res.render('addBikeView')
+// });
+
+// router.post('/add-bike', addBike)
 
 // 404 and 500 error handling
 router.use((req, res) => {

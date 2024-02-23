@@ -49,7 +49,7 @@ module.exports = async (req, res, next) =>{
         await order.save();
         // Clear the session cart after submitting the order
         req.session.cart = []; 
-        res.redirect('/orders-view');
+        res.redirect('/customer/orders-view');
     } catch(err) {
         console.error("Error saving order:", err);
         res.render('500',{error:"Error saving order"});
