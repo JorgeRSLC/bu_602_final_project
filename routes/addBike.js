@@ -8,6 +8,7 @@ module.exports = async (req, res, next) => {
         stockQuantity: req.body.stockQuantity,
         image: req.body.image
     });
+    
     await bike.save();
-    res.redirect('/admin/inventory');
+    res.redirect('/admin/update-inventory');
 }

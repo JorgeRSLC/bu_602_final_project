@@ -5,7 +5,11 @@ const addBike = require('./addBike');
 
 const adminRouter = express.Router();
 
-adminRouter.get('/inventory', inventory);
+adminRouter.get('/', (req, res) => {
+    res.render('adminConsoleView');
+});
+
+adminRouter.get('/update-inventory', inventory);
 adminRouter.post('/update-product', updateBike);
 adminRouter.get('/add-bike', (req, res) => {
     res.render('addBikeView');

@@ -15,9 +15,6 @@ module.exports = async (req, res, next) => {
         }
     })
 
-    results.forEach(bike =>{
-        bike.image = '/' + bike.image.slice(2)
-    })
     const cart = req.session.cart || [];
     let cartCount = 0;
     cart.forEach(item => {

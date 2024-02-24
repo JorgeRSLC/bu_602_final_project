@@ -14,5 +14,6 @@ module.exports = async (req, res, next) => {
             image: bike.image
         }
     })
+
     res.render('inventoryView', { products: results});
 };

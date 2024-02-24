@@ -1,4 +1,5 @@
 const User = require('../models/user'); // Assuming you have a User model
+const { use } = require('./customerRoutes');
 
 module.exports = async (req, res) => {
     // Assuming username unique and used for login
@@ -7,17 +8,19 @@ module.exports = async (req, res) => {
 
     try {
         const user = await User.findOne({ username: username });
- 
         if (!user) {
             res.render('loginView',
             {
                 message1: 'User not found.',
                 message2: 'Please try again, or register as new customer'
             });
-        } else if(user.role === 'admin') {
-            // redirect to admin page
-        }
-        else {
+        } //else if(user.role === 'admin') {
+        //     // redirect to admin page
+        //     console.log('Admin logged in. Redirecting to admin page.');
+                    
+        //     res.redirect('/admin');
+        // }
+        else {     
             if (password !== user.password) {
                 res.render('loginView',
                 {
@@ -31,7 +34,7 @@ module.exports = async (req, res) => {
                     req.session.user = {};
                 }
                 req.session.user = user._id; 
-                    // Check the user's role and redirect them to the appropriate route
+                // Check the user's role and redirect them to the appropriate route
                 if (user.role === 'admin') {
                     res.redirect('/admin');
                 } else {                    

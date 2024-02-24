@@ -2,7 +2,7 @@
 <div class="products-container">
     {{#each products}}
     <div class="product-inventory {{#if (eq this.stockQuantity 0)}}out-of-stock-inventory{{/if}}">
-        <form action="/update-product" method="POST">
+        <form action="/admin/update-product" method="POST">
             <input type="hidden" name="productId" value="{{this.id}}">
             <div class="product-image-container {{#if (eq this.stockQuantity 0)}}out-of-stock-products{{/if}}">
                 <img src="{{this.image}}" alt="{{this.name}}" class="product-image">
@@ -19,11 +19,11 @@
             <input type="text" id="image{{this.id}}" name="image" value="{{this.image}}">
             <input type="submit" value="Update Product">
         </form>
-        <form action="/delete-product" method="POST">
+        <form action="/admin/delete-product" method="POST">
             <input type="hidden" name="productId" value="{{this.id}}">
             <input type="submit" value="Delete Product">
         </form>
     </div>
     {{/each}}
 </div>
-<a href="/add-bike" class="order-submit">Add a new bike</a>
+<a href="/admin/add-bike" class="order-submit">Add a new bike</a>
