@@ -1,0 +1,25 @@
+<body>
+    <h1>Customers</h1>
+    <h2>{{message}}</h2>
+    <table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each users}}
+        <tr>
+            <td>{{this.firstName}} {{this.lastName}}</td>
+            <td>{{this.username}}</td>
+            <td>
+                <a href="/admin/review-orders/{{this.id}}">Review Orders</a>
+                <a href="/admin/update-customer/{{this.id}}">Update Customer</a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+</body>

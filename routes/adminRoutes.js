@@ -16,4 +16,7 @@ adminRouter.get('/add-bike', (req, res) => {
 });
 adminRouter.post('/add-bike', addBike);
 
+adminRouter.get('/review-customers', require('./customerReview'));
+adminRouter.get('/review-orders/:id', require('./reviewOrders'));
+
 module.exports = adminRouter;

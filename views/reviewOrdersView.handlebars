@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details</title>
+
+</head>
+<body>
+    <h1>{{name}}'s Orders</h1>
+    {{#each orderDetails}}
+        <div class="order-block">
+            <h2>Order Date: {{this.date}}</h3>
+            <h3>Order ID: {{this.orderID}}</h2>
+            <table class="ordersView-table">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Update Orders</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each this.products}}
+                        <tr>    
+                            <td>{{this.name}}</td>
+                            <td>{{this.quantity}}</td>
+                            <td>{{this.price}}</td>
+                            <td>
+                                <a href="/admin/update-order/{{this.id}}">Update Order</a>
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    {{/each}}
+</body>
+</html>
