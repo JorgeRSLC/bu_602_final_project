@@ -60,10 +60,13 @@ module.exports = async function (req, res, next) {
                 date: dateFormatter(orderDate)
             });
         }
-        console.log(req.query.name);
+        let message = '';
+        if (orderDetails.length === 0) {
+            message = 'No orders found';
+        }
         
         // Render the ordersView with orderDetails data
-        res.render('reviewOrdersView', { name: req.query.name, 
+        res.render('reviewOrdersView', { message:message, name: req.query.name, 
             orderDetails: orderDetails });
     } catch (error) {
         console.error('Error fetching order details:', error);

@@ -414,3 +414,43 @@ button:hover {
 .register input[type="submit"]:hover {
     background-color: #005aad;
 }
+
+.review-orders {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+.review-orders h1, .review-orders h2 {
+    color: #444;
+}
+.review-orders .order-block {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.review-orders .ordersView-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.review-orders .ordersView-table th, .review-orders .ordersView-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+td.customer-links a {
+    display: inline-block !important;
+    padding: 5px 10px !important;
+    margin-right: 10px !important;
+    background-color: #0073e6 !important;
+    color: white !important;
+    text-decoration: none !important;
+    border-radius: 5px !important;
+    transition: background-color 0.3s ease !important;
+}
+
+td.customer-links a:last-child {
+    margin-right: 0 !important;
+}
+
+td.customer-links a:hover {
+    background-color: #005aad !important;
+}

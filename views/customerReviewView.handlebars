@@ -1,7 +1,7 @@
-<body>
+<body class="review-orders">
     <h1>Customers</h1>
     <h2>{{message}}</h2>
-    <table>
+    <table class="ordersView-table">
     <thead>
         <tr>
             <th>Name</th>
@@ -14,8 +14,8 @@
         <tr>
             <td>{{this.firstName}} {{this.lastName}}</td>
             <td>{{this.username}}</td>
-            <td>
-                <a href="/admin/review-orders/{{this.id}}">Review Orders</a>
+            <td class="customer-links">
+                <a href="/admin/review-orders/{{this.id}}?name={{this.firstName}}">Review Orders</a>
                 <a href="/admin/update-customer/{{this.id}}">Update Customer</a>
             </td>
         </tr>
