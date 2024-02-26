@@ -8,8 +8,8 @@ const displayOrders = require('./displayOrders');
 const customerRouter = express.Router();
 
 customerRouter.get('/', (req, res) => {
-    // Handle the request
-    res.redirect('/customer/products');
+    // render the customer console view
+    res.render('customerConsoleView');
 });
 
 customerRouter.get('/products', displayProducts);
