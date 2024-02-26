@@ -1,4 +1,5 @@
 <h2>Update Inventory</h2>
+<a href="/admin/add-bike" class="new-bike-link">Add a new bike</a>
 <div class="products-container">
     {{#each products}}
     <div class="product-inventory {{#if (eq this.stockQuantity 0)}}out-of-stock-inventory{{/if}}">
@@ -19,11 +20,10 @@
             <input type="text" id="image{{this.id}}" name="image" value="{{this.image}}">
             <input type="submit" value="Update Product">
         </form>
-        <form action="/admin/delete-product" method="POST">
+        <form action="/admin/delete-product/{{this.id}}" method="POST">
             <input type="hidden" name="productId" value="{{this.id}}">
             <input type="submit" value="Delete Product">
         </form>
     </div>
     {{/each}}
 </div>
-<a href="/admin/add-bike" class="order-submit">Add a new bike</a>

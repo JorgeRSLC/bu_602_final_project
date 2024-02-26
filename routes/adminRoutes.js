@@ -15,6 +15,7 @@ adminRouter.get('/add-bike', (req, res) => {
     res.render('addBikeView');
 });
 adminRouter.post('/add-bike', addBike);
+adminRouter.post('/delete-product/:id', require('./deleteProduct'));
 
 adminRouter.get('/review-customers', require('./customerReview'));
 adminRouter.get('/review-orders/:id', require('./reviewOrders'));

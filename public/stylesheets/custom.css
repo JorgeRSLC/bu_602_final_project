@@ -439,7 +439,8 @@ button:hover {
 
 td.customer-links a,
 .update-link,
-.delete-link {
+.delete-link,
+.new-bike-link {
     display: inline-block !important;
     padding: 5px 10px !important;
     margin-right: 10px !important;
@@ -456,7 +457,8 @@ td.customer-links a:last-child {
 
 td.customer-links a:hover,
 .update-link:hover,
-.delete-link:hover {
+.delete-link:hover,
+.new-bike-link:hover {
     background-color: #005aad !important;
 }
 
