@@ -436,8 +436,10 @@ button:hover {
     border: 1px solid #ccc;
     padding: 10px;
 }
+
 td.customer-links a,
-.update-link {
+.update-link,
+.delete-link {
     display: inline-block !important;
     padding: 5px 10px !important;
     margin-right: 10px !important;
@@ -453,10 +455,20 @@ td.customer-links a:last-child {
 }
 
 td.customer-links a:hover,
-.update-link:hover {
+.update-link:hover,
+.delete-link:hover {
     background-color: #005aad !important;
 }
 
-.update-link {
+.link-container {
+    display: flex;
+    gap: 10px;
+}
+
+.update-link,
+.delete-link {
     margin: 8px;
+}
+.delete-link {
+    background-color: #ff0000 !important;
 }

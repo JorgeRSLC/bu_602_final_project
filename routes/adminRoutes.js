@@ -22,4 +22,6 @@ adminRouter.get('/review-orders/:id', require('./reviewOrders'));
 adminRouter.get('/update-order/:id', require('./updateOrder'));
 adminRouter.post('/update-order/:id', require('./submitChangedOrder'));
 
+adminRouter.get('/delete-order/:id', require('./deleteOrder'));
+
 module.exports = adminRouter;

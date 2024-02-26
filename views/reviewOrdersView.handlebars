@@ -5,7 +5,12 @@
         <div class="order-block">
             <h2>Order Date: {{this.date}}</h3>
             <h3>Order ID: {{this.orderID}}</h2>
-            <a href="/admin/update-order/{{this.orderID}}" class="update-link">Update Order</a>
+            <div class="link-container">
+                <a href="/admin/update-order/{{this.orderID}}" 
+                class="update-link">Update Order</a>
+                <a href="/admin/delete-order/{{this.orderID}}"
+                class="delete-link">Delete Order</a>
+            </div>           
             <table class="ordersView-table">
                 <thead>
                     <tr>
