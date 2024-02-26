@@ -5,7 +5,7 @@
         <div class="order-block">
             <h2>Order Date: {{this.date}}</h3>
             <h3>Order ID: {{this.orderID}}</h2>
-            <a href="/admin/update-order/{{this.id}}">Update Order</a>
+            <a href="/admin/update-order/{{this.orderID}}" class="update-link">Update Order</a>
             <table class="ordersView-table">
                 <thead>
                     <tr>
@@ -27,4 +27,3 @@
         </div>
     {{/each}}
 </body>
-

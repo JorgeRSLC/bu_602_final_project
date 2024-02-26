@@ -436,7 +436,8 @@ button:hover {
     border: 1px solid #ccc;
     padding: 10px;
 }
-td.customer-links a {
+td.customer-links a,
+.update-link {
     display: inline-block !important;
     padding: 5px 10px !important;
     margin-right: 10px !important;
@@ -451,6 +452,11 @@ td.customer-links a:last-child {
     margin-right: 0 !important;
 }
 
-td.customer-links a:hover {
+td.customer-links a:hover,
+.update-link:hover {
     background-color: #005aad !important;
+}
+
+.update-link {
+    margin: 8px;
 }

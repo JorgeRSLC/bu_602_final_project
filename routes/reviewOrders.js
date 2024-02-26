@@ -64,9 +64,20 @@ module.exports = async function (req, res, next) {
         if (orderDetails.length === 0) {
             message = 'No orders found';
         }
-        
+
+        let firstName = '';
+        // check if req.query.name is defined
+        if (req.query.name === undefined) {
+            // if not, get from User model with id
+            const User = require('../models/user');
+            const user = await User.findById(req.params.id);
+            firstName = user.firstName;
+        }else{
+            // if defined, use the value
+            firstName = req.query.name;
+        }
         // Render the ordersView with orderDetails data
-        res.render('reviewOrdersView', { message:message, name: req.query.name, 
+        res.render('reviewOrdersView', { message:message, name: firstName, 
             orderDetails: orderDetails });
     } catch (error) {
         console.error('Error fetching order details:', error);
