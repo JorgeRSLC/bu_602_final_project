@@ -1,21 +1,17 @@
+// Description: This file contains the routes for the customer console view.
 const express = require('express');
-const displayProducts = require('./displayProducts');
-const addToOrder = require('./addToOrder');
-const orderSummary = require('./orderSummary');
-const submitOrder = require('./submitOrder');
-const displayOrders = require('./displayOrders');
 
 const customerRouter = express.Router();
-
+// Description: This route renders the customer console view.
 customerRouter.get('/', (req, res) => {
     // render the customer console view
     res.render('customerConsoleView');
 });
-
-customerRouter.get('/products', displayProducts);
-customerRouter.post('/add-to-order', addToOrder);
-customerRouter.post('/order-summary', orderSummary);
-customerRouter.post('/submit-order', submitOrder);
-customerRouter.get('/orders-view', displayOrders);
+// Routes for managing the customer's interaction with the store
+customerRouter.get('/products', require('./displayProducts'));
+customerRouter.post('/add-to-order', require('./addToOrder'));
+customerRouter.post('/order-summary', require('./orderSummary'));
+customerRouter.post('/submit-order', require('./submitOrder'));
+customerRouter.get('/orders-view', require('./displayOrders'));
 
 module.exports = customerRouter;

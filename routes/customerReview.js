@@ -1,6 +1,8 @@
+// import User model
 const User = require('../models/user'); 
-
+// Description: This file contains the routes for the customer review page.
 module.exports = async (req, res) => {
+    // Get all users from the database
     try {
         const user = await User.find({ role: { $ne: 'admin' } });
         let message = '';

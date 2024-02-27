@@ -1,13 +1,13 @@
 const Order = require('../models/orders');
 const Bike = require('../models/bikes');
-
+// Description: This function deletes an order from the database and
+// updates the stock of the products in the order.
 module.exports = async (req, res) => {
     // Get order from request parameters
     const orderID = req.params.id;
     
     // Get the order from the database
     const deletedOrder = await Order.findOneAndDelete({ _id: orderID });
-    console.log('order:', deletedOrder);
     
     let bikes = [];
     for(let item of deletedOrder.items) {
