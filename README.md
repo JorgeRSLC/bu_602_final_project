@@ -7,17 +7,17 @@ history. It also provides an admin interface for managing products
 and customer orders.
 
 ## FEATURES ##
-Display the full product list
-Search for products by name or description
-Customers can select and order products, specifying the desired quantity
-Order submissions update the available product quantities
-Back orders are not allowed
-Display a list of all previous orders for customers
-Admin interface for adding, updating, or deleting products
-Admin interface displays a list of all customers and their order history
-Admins can update or delete existing customer orders
+Display the full product list  
+Search for products by name or description  
+Customers can select and order products, specifying the desired quantity  
+Order submissions update the available product quantities  
+Back orders are not allowed  
+Display a list of all previous orders for customers  
+Admin interface for adding, updating, or deleting products  
+Admin interface displays a list of all customers and their order history  
+Admins can update or delete existing customer orders  
 Provides REST APIs in both XML and JSON formats for the product list, 
-products matching a specific name, and products within a specified price range
+products matching a specific name, and products within a specified price range  
 
 ## STARTING APPLICATION ##
 
