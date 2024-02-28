@@ -46,13 +46,13 @@ functionality to add an admin through the application.
 
 ## USER FUNCTIONALITY ##
 
-Logging in as customer will provide the functionality assigned to customers.
+Logging in as customer will provide the functionality assigned to customers.  
 Logging in as an admin will provide the functionality assigned to admin. 
 
 ## REST API ##
 
 REST API functionality can be accessed via http://localhost:3000/rest.
 
-Note: To access the REST functionality, the request must indicate either 
+**Note:** To access the REST functionality, the request must indicate either 
 ```application/json``` or ```application/xml``` in the request header as the 
-accept type.
+accept type. Not setting accept type will result in a ```406 error```
