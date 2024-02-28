@@ -22,7 +22,6 @@ module.exports = async (req, res) => {
     }
     // get user ID from order
     const customer = deletedOrder.customer;
-    console.log('customer:', customer);
     
     // redirect to the reviewOrders page
     res.redirect('/admin/review-orders/' + customer);
