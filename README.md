@@ -32,7 +32,7 @@ application will connect to automatically on startup.
 
 The application supports two types of users: customers and admins.
 
-Pre-registered Users
+**Pre-registered Users**  
 There are three pre-registered customers:
 
 Jorge Rodriguez, username: JCoco, password: 12345
