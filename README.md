@@ -35,12 +35,12 @@ The application supports two types of users: customers and admins.
 **Pre-registered Users**  
 There are three pre-registered customers:
 
-Jorge Rodriguez, username: JCoco, password: 12345
-Cathy Gavile, username: CG14, password: 12345
-Rebecca Rodriguez, username: RebRod89, password: 12345
+Jorge Rodriguez, username: JCoco, password: 12345  
+Cathy Gavile, username: CG14, password: 12345  
+Rebecca Rodriguez, username: RebRod89, password: 12345  
 And one pre-registered admin:
 
-Jorge Rodriguez, username: admin, password: 12345
+Jorge Rodriguez, username: admin, password: 12345  
 New customers can register through the application. However, there is no 
 functionality to add an admin through the application.
 
@@ -55,4 +55,4 @@ REST API functionality can be accessed via http://localhost:3000/rest.
 
 **Note:** To access the REST functionality, the request must indicate either 
 ```application/json``` or ```application/xml``` in the request header as the 
-accept type. Not setting accept type will result in a ```406 error```
+accept type. Not setting accept type will result in a ```406 error``` message.
