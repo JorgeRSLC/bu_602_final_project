@@ -1,6 +1,4 @@
 const express = require('express');
-const customerRouter = require('./customerRoutes');
-const adminRouter = require('./adminRoutes');
 
 require('../db')
 
@@ -37,8 +35,10 @@ router.get('/register', (req, res) => {
 
 router.post('/register', require('./register'));
 
-router.use('/customer', customerRouter);
-router.use('/admin', adminRouter);
+router.use('/customer', require('./customerRoutes'));
+router.use('/admin', require('./adminRoutes'));
+
+router.use('/rest', require('./restRouter'));
 
 router.use((req, res) => {
     res.render('404');

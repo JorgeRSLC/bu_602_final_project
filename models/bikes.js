@@ -2,7 +2,6 @@
 const mongoose = require('mongoose'); 
 
 // Creating a schema for the "bike" document
-let Schema = mongoose.Schema;
 let bikeSchema = new mongoose.Schema({
 	name: String,
     description: String,
