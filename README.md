@@ -23,7 +23,7 @@ products matching a specific name, and products within a specified price range
 
 The main point of entry for the application is ```server.js```. 
 
-Once started the application can be accessed at http://localhost:3000.
+Once started, the application can be accessed at http://localhost:3000.
 
 On first starting you will be greeted with a login screnn.
 
@@ -42,7 +42,7 @@ There are three pre-registered customers:
 
 Jorge Rodriguez, username: JCoco, password: 12345  
 Cathy Gavile, username: CG14, password: 12345  
-Rebecca Rodriguez, username: RebRod89, password: 12345  
+Rebecca Rodriguez, username: RebRod06, password: 12345  
 
 One pre-registered admin:
 Jorge Rodriguez, username: admin, password: 12345  
