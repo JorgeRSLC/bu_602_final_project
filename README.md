@@ -21,12 +21,17 @@ products matching a specific name, and products within a specified price range
 
 ## STARTING APPLICATION ##
 
-The main point of entry for the application is server.js.
+The main point of entry for the application is ```server.js```. 
 
 Once started the application can be accessed at http://localhost:3000.
 
-Persistence for the application is provided by MongoDB Atlas, which the 
-application will connect to automatically on startup.
+On first starting you will be greeted with a login screnn.
+
+To try the functionality of a customer,  login with one 
+of the customer accounts listed below, or register as a new customer.
+
+To try the functionality of an admin,  login with the user name "admin" 
+and password "12345".
 
 ## USERS ##
 
@@ -38,9 +43,10 @@ There are three pre-registered customers:
 Jorge Rodriguez, username: JCoco, password: 12345  
 Cathy Gavile, username: CG14, password: 12345  
 Rebecca Rodriguez, username: RebRod89, password: 12345  
-And one pre-registered admin:
 
+One pre-registered admin:
 Jorge Rodriguez, username: admin, password: 12345  
+
 New customers can register through the application. However, there is no 
 functionality to add an admin through the application.
 
